@@ -9,7 +9,7 @@
 #include <Forms.hpp>
 #include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
-class TKazachenko_UVP3_edit : public TForm
+class TShmigirev_UVP13_EDT : public TForm
 {
 __published:	// IDE-managed Components
         TButton *btOk;
@@ -35,9 +35,9 @@ private:	// User declarations
 public:		// User declarations
         int type_operation;
         void show_result();
-        __fastcall TKazachenko_UVP3_edit(TComponent* Owner);
+        __fastcall TShmigirev_UVP13_EDT(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TKazachenko_UVP3_edit *Kazachenko_UVP3_edit;
+extern PACKAGE TShmigirev_UVP13_EDT *Shmigirev_UVP13_EDT;
 //---------------------------------------------------------------------------
 #endif

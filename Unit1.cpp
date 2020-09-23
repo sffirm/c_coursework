@@ -1,4 +1,5 @@
 //---------------------------------------------------------------------------
+
 #include <vcl.h>
 #pragma hdrstop
 
@@ -32,7 +33,7 @@ void __fastcall TKazachenko_UVP3::FormCreate(TObject *Sender)
   Kazachenko_UVP3->_fileName  = "Events.dat";
   Kazachenko_UVP3->_fileTmp  = "Events.tmp";
   Kazachenko_UVP3->_fileReserv  = "Events.res";
-  Kazachenko_UVP3_edit->show_result();
+  Shmigirev_UVP13_EDT->show_result();
   sgFindResult->Visible = false;
 }
 //---------------------------------------------------------------------------
@@ -51,53 +52,53 @@ void __fastcall TKazachenko_UVP3::sgFindResultDrawCell(TObject *Sender,
 
 void __fastcall TKazachenko_UVP3::File_CreateClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 1;
-   Kazachenko_UVP3_edit->ShowModal();
+   Shmigirev_UVP13_EDT->type_operation = 1;
+   Shmigirev_UVP13_EDT->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TKazachenko_UVP3::Insert_to_endClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 2;
+   Shmigirev_UVP13_EDT->type_operation = 2;
    sgFindResult->Visible = false;
-   Kazachenko_UVP3_edit->ShowModal();
+   Shmigirev_UVP13_EDT->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TKazachenko_UVP3::Insert_by_numberClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 3;
+   Shmigirev_UVP13_EDT->type_operation = 3;
    sgFindResult->Visible = false;
-   Kazachenko_UVP3_edit->ShowModal();
+   Shmigirev_UVP13_EDT->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TKazachenko_UVP3::Show_recordsClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->show_result();
+   Shmigirev_UVP13_EDT->show_result();
    sgFindResult->Visible = true;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TKazachenko_UVP3::Delete_by_numberClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 4;
+   Shmigirev_UVP13_EDT->type_operation = 4;
    sgFindResult->Visible = false;
-   Kazachenko_UVP3_edit->ShowModal();
+   Shmigirev_UVP13_EDT->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TKazachenko_UVP3::Show_by_typeClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 5;
+   Shmigirev_UVP13_EDT->type_operation = 5;
    sgFindResult->Visible = true;
-   Kazachenko_UVP3_edit->ShowModal();
+   Shmigirev_UVP13_EDT->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TKazachenko_UVP3::Delete_fileClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 6;
+   Shmigirev_UVP13_EDT->type_operation = 6;
    sgFindResult->Visible = false;
    removeFile();
 }
@@ -105,7 +106,7 @@ void __fastcall TKazachenko_UVP3::Delete_fileClick(TObject *Sender)
 
 void __fastcall TKazachenko_UVP3::BackupClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 7;
+   Shmigirev_UVP13_EDT->type_operation = 7;
    sgFindResult->Visible = false;
    copyFileToFile( Kazachenko_UVP3->_fileName, Kazachenko_UVP3->_fileReserv );
 }
@@ -113,7 +114,7 @@ void __fastcall TKazachenko_UVP3::BackupClick(TObject *Sender)
 
 void __fastcall TKazachenko_UVP3::RestoreClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 8;
+   Shmigirev_UVP13_EDT->type_operation = 8;
    sgFindResult->Visible = false;
    copyFileToFile( Kazachenko_UVP3->_fileReserv, Kazachenko_UVP3->_fileName );
 }
@@ -121,18 +122,17 @@ void __fastcall TKazachenko_UVP3::RestoreClick(TObject *Sender)
 
 void __fastcall TKazachenko_UVP3::Delete_by_nameClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 9;
+   Shmigirev_UVP13_EDT->type_operation = 9;
    sgFindResult->Visible = false;
-   Kazachenko_UVP3_edit->ShowModal();
+   Shmigirev_UVP13_EDT->ShowModal();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TKazachenko_UVP3::Change_countClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 10;
+   Shmigirev_UVP13_EDT->type_operation = 10;
    sgFindResult->Visible = false;
-   Kazachenko_UVP3_edit->ShowModal();
+   Shmigirev_UVP13_EDT->ShowModal();
 }
 //---------------------------------------------------------------------------
-
 

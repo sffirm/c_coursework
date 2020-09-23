@@ -1,9 +1,9 @@
-object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
+object Shmigirev_UVP13_EDT: TShmigirev_UVP13_EDT
   Left = 612
   Top = 322
-  Width = 649
-  Height = 264
-  Caption = '?????????????? ???????'
+  Width = 608
+  Height = 226
+  Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1079#1072#1087#1080#1089#1077#1081
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,51 +17,51 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   object lblUDK: TLabel
     Left = 8
     Top = 16
-    Width = 87
+    Width = 94
     Height = 13
-    Caption = '??? ???????????'
+    Caption = #1059#1044#1050' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103
   end
   object lblName: TLabel
     Left = 8
     Top = 40
-    Width = 117
+    Width = 120
     Height = 13
-    Caption = '???????? ???????????'
+    Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103
   end
   object lblTyptEvt: TLabel
     Left = 8
     Top = 64
-    Width = 87
+    Width = 89
     Height = 13
-    Caption = '??? ???????????'
+    Caption = #1058#1080#1087' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103
   end
   object lblDateEvt: TLabel
     Left = 8
     Top = 88
-    Width = 93
+    Width = 96
     Height = 13
-    Caption = '???? ???????????'
+    Caption = #1044#1072#1090#1072' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103
   end
   object lblPeopleCnt: TLabel
     Left = 8
     Top = 112
-    Width = 123
+    Width = 119
     Height = 13
-    Caption = '?????????? ??????????'
+    Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1091#1095#1072#1089#1090#1085#1080#1082#1086#1074
   end
   object lblFioHeroes: TLabel
     Left = 8
     Top = 136
-    Width = 174
+    Width = 177
     Height = 13
-    Caption = '??????? ???????????? ?????????'
+    Caption = #1060#1072#1084#1080#1083#1080#1080' '#1086#1090#1083#1080#1095#1080#1074#1096#1080#1093#1089#1103' '#1089#1090#1091#1076#1077#1085#1090#1086#1074
   end
   object lblNumRec: TLabel
     Left = 360
     Top = 8
-    Width = 69
+    Width = 73
     Height = 13
-    Caption = '????? ??????'
+    Caption = #1053#1086#1084#1077#1088' '#1079#1072#1087#1080#1089#1080
   end
   object btOk: TButton
     Left = 392
@@ -103,11 +103,11 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     ItemHeight = 13
     ItemIndex = 1
     TabOrder = 4
-    Text = '???????'
+    Text = #1059#1095#1077#1073#1085#1086#1077
     Items.Strings = (
-      'C?????????'
-      '???????'
-      '??????????????')
+      'C'#1087#1086#1088#1090#1080#1074#1085#1086#1077
+      #1059#1095#1077#1073#1085#1086#1077
+      #1042#1086#1089#1087#1080#1090#1072#1090#1077#1083#1100#1085#1086#1077)
   end
   object dtpDateEvt: TDateTimePicker
     Left = 192
