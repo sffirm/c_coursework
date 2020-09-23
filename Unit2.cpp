@@ -20,6 +20,7 @@ struct event_type{
   char pol[10];
   char rodoslovn[8];
   char fio_owner[60];
+  char cost[60];
 };
 
 event_type event;
@@ -75,11 +76,11 @@ void create_file(){
   if ( ( p = fopen(Kazachenko_UVP3->_fileName,"wb")) == NULL ){
      MessageDlg("Ошибка создания файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
   }
-  strcpy(event.poroda, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
-  strcpy(event.name,Kazachenko_UVP3_edit->edtName->Text.c_str());
-  strcpy(event.date_rozd,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
-  strcpy(event.pol,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
-  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+  strcpy(event.poroda, Kazachenko_UVP3_edit->editPoroda->Text.c_str());
+  strcpy(event.name,Kazachenko_UVP3_edit->editName->Text.c_str());
+  strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
+  strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
+  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
   strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
   fwrite(&event,sizeof(event),1,p);
   fclose(p);
@@ -92,11 +93,11 @@ void insert_to_end(){
   p = fopen(Kazachenko_UVP3->_fileName,"ab");
   if ( p != NULL )
   {
-    strcpy(event.poroda, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
-    strcpy(event.name,Kazachenko_UVP3_edit->edtName->Text.c_str());
-    strcpy(event.date_rozd,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
-    strcpy(event.pol,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
-    strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+    strcpy(event.poroda, Kazachenko_UVP3_edit->editPoroda->Text.c_str());
+    strcpy(event.name,Kazachenko_UVP3_edit->editName->Text.c_str());
+    strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
+    strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
+    strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
     strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
     fwrite(&event,sizeof(event),1,p);
     fclose(p);
@@ -151,11 +152,11 @@ void insert_by_number()
     }
   }
 
-  strcpy(event.poroda, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
-  strcpy(event.name,Kazachenko_UVP3_edit->edtName->Text.c_str());
-  strcpy(event.date_rozd,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
-  strcpy(event.pol,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
-  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+  strcpy(event.poroda, Kazachenko_UVP3_edit->editPoroda->Text.c_str());
+  strcpy(event.name,Kazachenko_UVP3_edit->editName->Text.c_str());
+  strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
+  strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
+  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
   strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
   fwrite(&event,sizeof(event),1,p2);
 
@@ -203,7 +204,7 @@ void delete_by_number()
 void show_by_type()
 {
   char type_evt[30];
-  strcpy(type_evt, Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
+  strcpy(type_evt, Kazachenko_UVP3_edit->editPol->Text.c_str());
   for (int i =1; i < Kazachenko_UVP3->sgFindResult->ColCount; i++)
     for (int j=1; j < Kazachenko_UVP3->sgFindResult->RowCount; j++)
       Kazachenko_UVP3->sgFindResult->Cells[i][j] = "";
@@ -270,7 +271,7 @@ void delete_by_name(){
     FILE *p1,*p2;
     char lv_name[50];
     int lv_kol = 0;
-    strcpy(lv_name,Kazachenko_UVP3_edit->edtName->Text.c_str());
+    strcpy(lv_name,Kazachenko_UVP3_edit->editName->Text.c_str());
     if ( ( p1 = fopen( Kazachenko_UVP3->_fileName, "rb" ) ) == NULL ){
       MessageDlg("Ошибка чтения исходного файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
       return;
@@ -300,8 +301,8 @@ void change_count(){
     char lv_name[50], lv_people_cnt[8];
     int lv_kol = 0;
 
-    strcpy(lv_name, Kazachenko_UVP3_edit->edtName->Text.c_str() );
-    strcpy(lv_people_cnt, Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str() );
+    strcpy(lv_name, Kazachenko_UVP3_edit->editName->Text.c_str() );
+    strcpy(lv_people_cnt, Kazachenko_UVP3_edit->editRodosl->Text.c_str() );
     if ( ( p1 = fopen( Kazachenko_UVP3->_fileName, "rb" ) ) == NULL ){
       MessageDlg("Ошибка чтения исходного файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
       return;
@@ -330,73 +331,73 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
     switch (type_operation) {
     case 1:
       Kazachenko_UVP3_edit->Caption = "Создание нового файла";
-      edtUDK->Visible = true;
-      edtName->Visible = true;
+      editPoroda->Visible = true;
+      editName->Visible = true;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = true;
+      editRodosl->Visible = true;
       edtFioHeroes->Visible = true;
-      cmbTyptEvt->Visible = true;
-      dtpDateEvt->Visible = true;
+      editPol->Visible = true;
+      editDate_rozd->Visible = true;
       break;
     case 2:
       Kazachenko_UVP3_edit->Caption = "Добавление записи в конец файла";
-      edtUDK->Visible = true;
-      edtName->Visible = true;
+      editPoroda->Visible = true;
+      editName->Visible = true;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = true;
+      editRodosl->Visible = true;
       edtFioHeroes->Visible = true;
-      cmbTyptEvt->Visible = true;
-      dtpDateEvt->Visible = true;
+      editPol->Visible = true;
+      editDate_rozd->Visible = true;
       break;
     case 3:
       Kazachenko_UVP3_edit->Caption = "Добавление записи по номеру";
-      edtUDK->Visible = true;
-      edtName->Visible = true;
+      editPoroda->Visible = true;
+      editName->Visible = true;
       edtNumRec->Visible = true;
-      edtPeopleCnt->Visible = true;
+      editRodosl->Visible = true;
       edtFioHeroes->Visible = true;
-      cmbTyptEvt->Visible = true;
-      dtpDateEvt->Visible = true;
+      editPol->Visible = true;
+      editDate_rozd->Visible = true;
       break;
     case 4:
       Kazachenko_UVP3_edit->Caption = "Удаление записи в конец файла";
-      edtUDK->Visible = false;
-      edtName->Visible = false;
+      editPoroda->Visible = false;
+      editName->Visible = false;
       edtNumRec->Visible = true;
-      edtPeopleCnt->Visible = false;
+      editRodosl->Visible = false;
       edtFioHeroes->Visible = false;
-      cmbTyptEvt->Visible = false;
-      dtpDateEvt->Visible = false;
+      editPol->Visible = false;
+      editDate_rozd->Visible = false;
       break;
     case 5:
       Kazachenko_UVP3_edit->Caption = "Показать записи по типу";
-      edtUDK->Visible = false;
-      edtName->Visible = false;
+      editPoroda->Visible = false;
+      editName->Visible = false;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = false;
+      editRodosl->Visible = false;
       edtFioHeroes->Visible = false;
-      cmbTyptEvt->Visible = true;
-      dtpDateEvt->Visible = false;
+      editPol->Visible = true;
+      editDate_rozd->Visible = false;
       break;
     case 9:
       Kazachenko_UVP3_edit->Caption = "Удалить записи по заданному имени";
-      edtUDK->Visible = false;
-      edtName->Visible = true;
+      editPoroda->Visible = false;
+      editName->Visible = true;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = false;
+      editRodosl->Visible = false;
       edtFioHeroes->Visible = false;
-      cmbTyptEvt->Visible = false;
-      dtpDateEvt->Visible = false;
+      editPol->Visible = false;
+      editDate_rozd->Visible = false;
       break;
     case 10:
       Kazachenko_UVP3_edit->Caption = "Изменить количество для записей с заданным именем";
-      edtUDK->Visible = false;
-      edtName->Visible = true;
+      editPoroda->Visible = false;
+      editName->Visible = true;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = true;
+      editRodosl->Visible = true;
       edtFioHeroes->Visible = false;
-      cmbTyptEvt->Visible = false;
-      dtpDateEvt->Visible = false;
+      editPol->Visible = false;
+      editDate_rozd->Visible = false;
       break;
   }
 }
@@ -408,5 +409,6 @@ void __fastcall TKazachenko_UVP3_edit::btCancelClick(TObject *Sender)
    Kazachenko_UVP3_edit->Close();
 }
 //---------------------------------------------------------------------------
+
 
 

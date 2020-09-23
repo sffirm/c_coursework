@@ -1,8 +1,8 @@
 object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
-  Left = 489
-  Top = 114
+  Left = 488
+  Top = 178
   Width = 642
-  Height = 246
+  Height = 303
   Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1079#1072#1087#1080#1089#1077#1081
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,44 +17,44 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   object lblUDK: TLabel
     Left = 8
     Top = 16
-    Width = 94
+    Width = 77
     Height = 13
-    Caption = #1059#1044#1050' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103
+    Caption = #1055#1086#1088#1086#1076#1072' '#1089#1086#1073#1072#1082#1080
   end
   object lblName: TLabel
     Left = 8
     Top = 40
-    Width = 120
+    Width = 36
     Height = 13
-    Caption = #1053#1072#1079#1074#1072#1085#1080#1077' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103
+    Caption = #1050#1083#1080#1095#1082#1072
   end
   object lblTyptEvt: TLabel
     Left = 8
     Top = 64
-    Width = 89
+    Width = 79
     Height = 13
-    Caption = #1058#1080#1087' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103
+    Caption = #1044#1072#1090#1072' '#1088#1086#1078#1076#1077#1085#1080#1103
   end
   object lblDateEvt: TLabel
     Left = 8
     Top = 88
-    Width = 96
+    Width = 20
     Height = 13
-    Caption = #1044#1072#1090#1072' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103
+    Caption = #1055#1086#1083
   end
   object lblPeopleCnt: TLabel
     Left = 8
     Top = 112
-    Width = 119
+    Width = 112
     Height = 13
-    Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1091#1095#1072#1089#1090#1085#1080#1082#1086#1074
+    Caption = #1053#1072#1083#1080#1095#1080#1077' '#1088#1086#1076#1086#1089#1083#1086#1074#1085#1086#1081
   end
   object lblFioHeroes: TLabel
     Left = 8
     Top = 136
-    Width = 177
+    Width = 84
     Height = 13
-    Caption = #1060#1072#1084#1080#1083#1080#1080' '#1086#1090#1083#1080#1095#1080#1074#1096#1080#1093#1089#1103' '#1089#1090#1091#1076#1077#1085#1090#1086#1074
+    Caption = #1060#1048#1054' '#1074#1083#1072#1076#1077#1083#1100#1094#1072
   end
   object lblNumRec: TLabel
     Left = 360
@@ -65,7 +65,7 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   end
   object btOk: TButton
     Left = 392
-    Top = 160
+    Top = 216
     Width = 75
     Height = 25
     Caption = 'OK'
@@ -74,44 +74,42 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   end
   object btCancel: TButton
     Left = 472
-    Top = 160
+    Top = 216
     Width = 75
     Height = 25
     Caption = 'Cancel'
     TabOrder = 1
     OnClick = btCancelClick
   end
-  object edtUDK: TEdit
-    Left = 192
+  object editPoroda: TEdit
+    Left = 160
     Top = 8
     Width = 97
     Height = 21
     TabOrder = 2
   end
-  object edtName: TEdit
-    Left = 192
+  object editName: TEdit
+    Left = 160
     Top = 32
     Width = 201
     Height = 21
     TabOrder = 3
   end
-  object cmbTyptEvt: TComboBox
-    Left = 192
-    Top = 56
+  object editPol: TComboBox
+    Left = 160
+    Top = 80
     Width = 145
     Height = 21
     ItemHeight = 13
-    ItemIndex = 1
     TabOrder = 4
     Text = #1059#1095#1077#1073#1085#1086#1077
     Items.Strings = (
-      'C'#1087#1086#1088#1090#1080#1074#1085#1086#1077
-      #1059#1095#1077#1073#1085#1086#1077
-      #1042#1086#1089#1087#1080#1090#1072#1090#1077#1083#1100#1085#1086#1077)
+      #1052#1072#1083#1100#1095#1080#1082
+      #1044#1077#1074#1086#1095#1082#1072)
   end
-  object dtpDateEvt: TDateTimePicker
-    Left = 192
-    Top = 80
+  object editDate_rozd: TDateTimePicker
+    Left = 160
+    Top = 56
     Width = 105
     Height = 21
     CalAlignment = dtaLeft
@@ -123,25 +121,30 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     ParseInput = False
     TabOrder = 5
   end
-  object edtPeopleCnt: TEdit
-    Left = 192
-    Top = 104
-    Width = 105
-    Height = 21
-    TabOrder = 6
-  end
   object edtFioHeroes: TEdit
-    Left = 192
+    Left = 160
     Top = 128
     Width = 401
     Height = 21
-    TabOrder = 7
+    TabOrder = 6
   end
   object edtNumRec: TEdit
     Left = 464
     Top = 8
     Width = 121
     Height = 21
+    TabOrder = 7
+  end
+  object editRodosl: TComboBox
+    Left = 160
+    Top = 104
+    Width = 145
+    Height = 21
+    ItemHeight = 13
     TabOrder = 8
+    Text = #1059#1095#1077#1073#1085#1086#1077
+    Items.Strings = (
+      #1044#1072
+      #1053#1077#1090)
   end
 end

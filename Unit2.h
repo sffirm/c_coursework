@@ -14,20 +14,20 @@ class TKazachenko_UVP3_edit : public TForm
 __published:	// IDE-managed Components
         TButton *btOk;
         TButton *btCancel;
-        TEdit *edtUDK;
+        TEdit *editPoroda;
         TLabel *lblUDK;
         TLabel *lblName;
-        TEdit *edtName;
+        TEdit *editName;
         TLabel *lblTyptEvt;
-        TComboBox *cmbTyptEvt;
+        TComboBox *editPol;
         TLabel *lblDateEvt;
-        TDateTimePicker *dtpDateEvt;
-        TEdit *edtPeopleCnt;
+        TDateTimePicker *editDate_rozd;
         TLabel *lblPeopleCnt;
         TLabel *lblFioHeroes;
         TEdit *edtFioHeroes;
         TEdit *edtNumRec;
         TLabel *lblNumRec;
+        TComboBox *editRodosl;
         void __fastcall btOkClick(TObject *Sender);
         void __fastcall FormShow(TObject *Sender);
         void __fastcall btCancelClick(TObject *Sender);
