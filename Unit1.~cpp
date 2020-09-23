@@ -1,7 +1,10 @@
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
-#pragma hdrstop
+#pragma hdrstop  
+#include <conio.h>
+#include <string.h>
+#include <stdio.h>
 
 #include "Unit1.h"
 #include "Unit2.h"
@@ -11,6 +14,17 @@
 TKazachenko_UVP3 *Kazachenko_UVP3;
 void removeFile();
 void copyFileToFile( char * fileFrom, char * fileTo);
+struct event_type{
+  char poroda[50];
+  char name[50];
+  char date_rozd[30];
+  char pol[10];
+  char rodoslovn[8];
+  char fio_owner[60];
+  char cost[60];
+};
+
+event_type event;
 //---------------------------------------------------------------------------
 __fastcall TKazachenko_UVP3::TKazachenko_UVP3(TComponent* Owner)
         : TForm(Owner)
@@ -123,9 +137,31 @@ void __fastcall TKazachenko_UVP3::RestoreClick(TObject *Sender)
 
 void __fastcall TKazachenko_UVP3::Delete_by_nameClick(TObject *Sender)
 {
-   Kazachenko_UVP3_edit->type_operation = 9;
-   sgFindResult->Visible = false;
-   Kazachenko_UVP3_edit->ShowModal();
+    FILE *p1,*p2;
+    char rodosl[50];
+    int count = 0;
+    strcpy(rodosl, "Нет");
+    if ( ( p1 = fopen( Kazachenko_UVP3->_fileName, "rb" ) ) == NULL ){
+      MessageDlg("Ошибка чтения исходного файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
+      return;
+    };
+    if ( ( p2 = fopen( Kazachenko_UVP3->_fileTmp, "wb") ) == NULL ){
+      MessageDlg("Ошибка создания временного файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
+      return;
+    };
+    while( fread(&event,sizeof(event),1,p1) != 0 )
+    {
+      if ( strcmp(rodosl, event.rodoslovn ) != 0 ){
+        fwrite(&event,sizeof(event),1,p2);
+      }else{
+        count++;
+      }
+    }
+    fcloseall();
+    unlink(Kazachenko_UVP3->_fileName);
+    rename(Kazachenko_UVP3->_fileTmp,Kazachenko_UVP3->_fileName);
+    MessageDlg( "Количество удаленных строк: " + AnsiString(count),mtWarning,TMsgDlgButtons()<<mbOK,0);
+    Kazachenko_UVP3_edit->show_result();
 }
 //---------------------------------------------------------------------------
 

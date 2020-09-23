@@ -30,7 +30,6 @@ void insert_to_end();
 void insert_by_number();
 void delete_by_number();
 void show_dogs();
-void delete_by_name();
 void change_cost();
 
 //---------------------------------------------------------------------------
@@ -60,9 +59,6 @@ void __fastcall TKazachenko_UVP3_edit::btOkClick(TObject *Sender)
       break;
     case 5:
       show_dogs();
-      break;
-    case 9:
-      delete_by_name();
       break;
     case 10:
       change_cost();
@@ -275,35 +271,6 @@ void copyFileToFile( char * fileFrom, char * fileTo){
     MessageDlg("Операция выполнена успешно",mtWarning,TMsgDlgButtons()<<mbOK,0);
 }
 
-void delete_by_name(){
-    FILE *p1,*p2;
-    char lv_name[50];
-    int lv_kol = 0;
-    strcpy(lv_name,Kazachenko_UVP3_edit->editName->Text.c_str());
-    if ( ( p1 = fopen( Kazachenko_UVP3->_fileName, "rb" ) ) == NULL ){
-      MessageDlg("Ошибка чтения исходного файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
-      return;
-    };
-    if ( ( p2 = fopen( Kazachenko_UVP3->_fileTmp, "wb") ) == NULL ){
-      MessageDlg("Ошибка создания временного файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
-      return;
-    };
-    while( fread(&event,sizeof(event),1,p1) != 0 )
-    {
-      if ( strcmp(lv_name, event.name ) != 0 ){
-        fwrite(&event,sizeof(event),1,p2);
-      }else{
-        lv_kol++;
-      }
-    }
-    fcloseall();
-    unlink(Kazachenko_UVP3->_fileName);
-    rename(Kazachenko_UVP3->_fileTmp,Kazachenko_UVP3->_fileName);
-    MessageDlg( "Количество удаленных строк: " + AnsiString(lv_kol),mtWarning,TMsgDlgButtons()<<mbOK,0);
-    Kazachenko_UVP3->Show();
-    Kazachenko_UVP3_edit->Close();
-}
-
 void change_cost(){
     FILE *p1,*p2;
     char dog_name[50], dog_cost[50];
@@ -397,18 +364,6 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editDate_rozd->Visible = false;
       editCost->Visible = false;        
       editYear->Visible = true;
-      break;
-    case 9:
-      Kazachenko_UVP3_edit->Caption = "Удалить записи по заданному имени";
-      editPoroda->Visible = false;
-      editName->Visible = true;
-      edtNumRec->Visible = false;
-      editRodosl->Visible = false;
-      editOwner->Visible = false;
-      editPol->Visible = false;
-      editDate_rozd->Visible = false;
-      editCost->Visible = false;        
-      editYear->Visible = false;
       break;
     case 10:
       Kazachenko_UVP3_edit->Caption = "Изменить стоимость для заданной собаки";
