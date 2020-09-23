@@ -3,7 +3,7 @@
 #include <vcl.h>
 #pragma hdrstop
 //---------------------------------------------------------------------------
-USEFORM("Unit1.cpp", Shmigirev_UVP13);
+USEFORM("Unit1.cpp", Kazachenko_UVP3);
 USEFORM("Unit2.cpp", Shmigirev_UVP13_EDT);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
@@ -11,7 +11,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
         try
         {
                  Application->Initialize();
-                 Application->CreateForm(__classid(TShmigirev_UVP13), &Shmigirev_UVP13);
+                 Application->CreateForm(__classid(TKazachenko_UVP3), &Kazachenko_UVP3);
                  Application->CreateForm(__classid(TShmigirev_UVP13_EDT), &Shmigirev_UVP13_EDT);
                  Application->Run();
         }

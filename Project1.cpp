@@ -4,7 +4,7 @@
 #pragma hdrstop
 //---------------------------------------------------------------------------
 USEFORM("Unit1.cpp", Kazachenko_UVP3);
-USEFORM("Unit2.cpp", Shmigirev_UVP13_EDT);
+USEFORM("Unit2.cpp", Kazachenko_UVP3_edit);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -12,7 +12,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
         {
                  Application->Initialize();
                  Application->CreateForm(__classid(TKazachenko_UVP3), &Kazachenko_UVP3);
-                 Application->CreateForm(__classid(TShmigirev_UVP13_EDT), &Shmigirev_UVP13_EDT);
+                 Application->CreateForm(__classid(TKazachenko_UVP3_edit), &Kazachenko_UVP3_edit);
                  Application->Run();
         }
         catch (Exception &exception)

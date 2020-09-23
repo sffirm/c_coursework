@@ -14,12 +14,12 @@
 
 TKazachenko_UVP3_edit *Kazachenko_UVP3_edit;
 struct event_type{
-  char udk[10];
+  char poroda[50];
   char name[50];
-  char type_evt[30];
-  char date_evt[10];
-  char people_cnt[8];
-  char fio_heroes[60];
+  char date_rozd[30];
+  char pol[10];
+  char rodoslovn[8];
+  char fio_owner[60];
 };
 
 event_type event;
@@ -75,12 +75,12 @@ void create_file(){
   if ( ( p = fopen(Kazachenko_UVP3->_fileName,"wb")) == NULL ){
      MessageDlg("Ошибка создания файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
   }
-  strcpy(event.udk, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
+  strcpy(event.poroda, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
   strcpy(event.name,Kazachenko_UVP3_edit->edtName->Text.c_str());
-  strcpy(event.type_evt,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
-  strcpy(event.date_evt,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
-  strcpy(event.people_cnt,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
-  strcpy(event.fio_heroes,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
+  strcpy(event.date_rozd,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
+  strcpy(event.pol,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
+  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+  strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
   fwrite(&event,sizeof(event),1,p);
   fclose(p);
   Kazachenko_UVP3->Show();
@@ -92,12 +92,12 @@ void insert_to_end(){
   p = fopen(Kazachenko_UVP3->_fileName,"ab");
   if ( p != NULL )
   {
-    strcpy(event.udk, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
+    strcpy(event.poroda, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
     strcpy(event.name,Kazachenko_UVP3_edit->edtName->Text.c_str());
-    strcpy(event.type_evt,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
-    strcpy(event.date_evt,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
-    strcpy(event.people_cnt,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
-    strcpy(event.fio_heroes,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
+    strcpy(event.date_rozd,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
+    strcpy(event.pol,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
+    strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+    strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
     fwrite(&event,sizeof(event),1,p);
     fclose(p);
   } else {
@@ -118,12 +118,12 @@ void TKazachenko_UVP3_edit::show_result()
     while (fread(&event,sizeof(event),1,p) != 0)
     {
        i++;
-       Kazachenko_UVP3->sgFindResult->Cells[1][i] = event.udk;          //"УДК  мероприятия"
+       Kazachenko_UVP3->sgFindResult->Cells[1][i] = event.poroda;          //"УДК  мероприятия"
        Kazachenko_UVP3->sgFindResult->Cells[2][i] = event.name;         //Название мероприятия";
-       Kazachenko_UVP3->sgFindResult->Cells[3][i] = event.type_evt;     //"Тип мероприятия";
-       Kazachenko_UVP3->sgFindResult->Cells[4][i] = event.date_evt;     //"Дата мероприятия"
-       Kazachenko_UVP3->sgFindResult->Cells[5][i] = event.people_cnt;   //Количество человек принявших участие в мероприятии"
-       Kazachenko_UVP3->sgFindResult->Cells[6][i] = event.fio_heroes;   //"Фамилии отличившихся студентов"
+       Kazachenko_UVP3->sgFindResult->Cells[3][i] = event.date_rozd;     //"Тип мероприятия";
+       Kazachenko_UVP3->sgFindResult->Cells[4][i] = event.pol;     //"Дата мероприятия"
+       Kazachenko_UVP3->sgFindResult->Cells[5][i] = event.rodoslovn;   //Количество человек принявших участие в мероприятии"
+       Kazachenko_UVP3->sgFindResult->Cells[6][i] = event.fio_owner;   //"Фамилии отличившихся студентов"
        Kazachenko_UVP3->sgFindResult->RowCount    = i+1;
     }
     fclose(p);
@@ -151,12 +151,12 @@ void insert_by_number()
     }
   }
 
-  strcpy(event.udk, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
+  strcpy(event.poroda, Kazachenko_UVP3_edit->edtUDK->Text.c_str());
   strcpy(event.name,Kazachenko_UVP3_edit->edtName->Text.c_str());
-  strcpy(event.type_evt,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
-  strcpy(event.date_evt,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
-  strcpy(event.people_cnt,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
-  strcpy(event.fio_heroes,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
+  strcpy(event.date_rozd,Kazachenko_UVP3_edit->cmbTyptEvt->Text.c_str());
+  strcpy(event.pol,Kazachenko_UVP3_edit->dtpDateEvt->Date.DateString().c_str());
+  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+  strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
   fwrite(&event,sizeof(event),1,p2);
 
   while(fread(&event,sizeof(event),1,p1)!=0) fwrite(&event,sizeof(event),1,p2);
@@ -215,15 +215,15 @@ void show_by_type()
   int i = 0;
   while (fread(&event,sizeof(event),1,p) != 0)
   {
-     if ( strcmp(event.type_evt, type_evt) == 0 )
+     if ( strcmp(event.date_rozd, type_evt) == 0 )
      {
        i++;
-       Kazachenko_UVP3->sgFindResult->Cells[1][i] = event.udk;          //"УДК  мероприятия"
+       Kazachenko_UVP3->sgFindResult->Cells[1][i] = event.poroda;          //"УДК  мероприятия"
        Kazachenko_UVP3->sgFindResult->Cells[2][i] = event.name;         //Название мероприятия";
-       Kazachenko_UVP3->sgFindResult->Cells[3][i] = event.type_evt;     //"Тип мероприятия";
-       Kazachenko_UVP3->sgFindResult->Cells[4][i] = event.date_evt;     //"Дата мероприятия"
-       Kazachenko_UVP3->sgFindResult->Cells[5][i] = event.people_cnt;   //Количество человек принявших участие в мероприятии"
-       Kazachenko_UVP3->sgFindResult->Cells[6][i] = event.fio_heroes;   //"Фамилии отличившихся студентов"
+       Kazachenko_UVP3->sgFindResult->Cells[3][i] = event.date_rozd;     //"Тип мероприятия";
+       Kazachenko_UVP3->sgFindResult->Cells[4][i] = event.pol;     //"Дата мероприятия"
+       Kazachenko_UVP3->sgFindResult->Cells[5][i] = event.rodoslovn;   //Количество человек принявших участие в мероприятии"
+       Kazachenko_UVP3->sgFindResult->Cells[6][i] = event.fio_owner;   //"Фамилии отличившихся студентов"
        Kazachenko_UVP3->sgFindResult->RowCount    = i+1;
     }
   }
@@ -313,7 +313,7 @@ void change_count(){
     while( fread(&event,sizeof(event),1,p1) != 0 )
     {
       if ( strcmp(lv_name, event.name ) == 0 ){
-        strcpy(event.people_cnt, lv_people_cnt);
+        strcpy(event.rodoslovn, lv_people_cnt);
         lv_kol++;
       }
       fwrite(&event,sizeof(event),1,p2);
@@ -408,4 +408,5 @@ void __fastcall TKazachenko_UVP3_edit::btCancelClick(TObject *Sender)
    Kazachenko_UVP3_edit->Close();
 }
 //---------------------------------------------------------------------------
+
 

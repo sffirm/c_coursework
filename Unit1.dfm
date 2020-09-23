@@ -21,7 +21,7 @@ object Kazachenko_UVP3: TKazachenko_UVP3
     Width = 944
     Height = 493
     Align = alClient
-    ColCount = 7
+    ColCount = 8
     DefaultColWidth = 10
     DefaultRowHeight = 50
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing]
@@ -34,7 +34,8 @@ object Kazachenko_UVP3: TKazachenko_UVP3
       111
       82
       135
-      139)
+      139
+      107)
     RowHeights = (
       50
       24

@@ -24,12 +24,13 @@ void __fastcall TKazachenko_UVP3::Exit_programmClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TKazachenko_UVP3::FormCreate(TObject *Sender)
 {
-  sgFindResult->Cells[1][0] = "УДК  мероприятия";
-  sgFindResult->Cells[2][0] = "Название мероприятия";
-  sgFindResult->Cells[3][0] = "Тип мероприятия";
-  sgFindResult->Cells[4][0] = "Дата мероприятия";
-  sgFindResult->Cells[5][0] = "Количество человек принявших участие в мероприятии";
-  sgFindResult->Cells[6][0] = "Фамилии отличившихся студентов";
+  sgFindResult->Cells[1][0] = "Порода собаки";
+  sgFindResult->Cells[2][0] = "Кличка";
+  sgFindResult->Cells[3][0] = "Дата рождения";
+  sgFindResult->Cells[4][0] = "Пол";
+  sgFindResult->Cells[5][0] = "Наличие родословной ";
+  sgFindResult->Cells[6][0] = "ФИО владельца";
+  sgFindResult->Cells[7][0] = "Стоимость";
   Kazachenko_UVP3->_fileName  = "Events.dat";
   Kazachenko_UVP3->_fileTmp  = "Events.tmp";
   Kazachenko_UVP3->_fileReserv  = "Events.res";
@@ -135,4 +136,5 @@ void __fastcall TKazachenko_UVP3::Change_countClick(TObject *Sender)
    Kazachenko_UVP3_edit->ShowModal();
 }
 //---------------------------------------------------------------------------
+
 
