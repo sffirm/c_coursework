@@ -81,7 +81,8 @@ void create_file(){
   strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
   strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
   strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
-  strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
+  strcpy(event.fio_owner,Kazachenko_UVP3_edit->editOwner->Text.c_str());
+  strcpy(event.cost,Kazachenko_UVP3_edit->editCost->Text.c_str());
   fwrite(&event,sizeof(event),1,p);
   fclose(p);
   Kazachenko_UVP3->Show();
@@ -98,7 +99,8 @@ void insert_to_end(){
     strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
     strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
     strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
-    strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
+    strcpy(event.fio_owner,Kazachenko_UVP3_edit->editOwner->Text.c_str()); 
+    strcpy(event.cost,Kazachenko_UVP3_edit->editCost->Text.c_str());
     fwrite(&event,sizeof(event),1,p);
     fclose(p);
   } else {
@@ -124,7 +126,8 @@ void TKazachenko_UVP3_edit::show_result()
        Kazachenko_UVP3->sgFindResult->Cells[3][i] = event.date_rozd;     //"Тип мероприятия";
        Kazachenko_UVP3->sgFindResult->Cells[4][i] = event.pol;     //"Дата мероприятия"
        Kazachenko_UVP3->sgFindResult->Cells[5][i] = event.rodoslovn;   //Количество человек принявших участие в мероприятии"
-       Kazachenko_UVP3->sgFindResult->Cells[6][i] = event.fio_owner;   //"Фамилии отличившихся студентов"
+       Kazachenko_UVP3->sgFindResult->Cells[6][i] = event.fio_owner;   //"Фамилии отличившихся студентов"      
+       Kazachenko_UVP3->sgFindResult->Cells[7][i] = event.cost;   //"Фамилии отличившихся студентов"
        Kazachenko_UVP3->sgFindResult->RowCount    = i+1;
     }
     fclose(p);
@@ -157,7 +160,8 @@ void insert_by_number()
   strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
   strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
   strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
-  strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
+  strcpy(event.fio_owner,Kazachenko_UVP3_edit->editOwner->Text.c_str());
+  strcpy(event.cost,Kazachenko_UVP3_edit->editCost->Text.c_str());
   fwrite(&event,sizeof(event),1,p2);
 
   while(fread(&event,sizeof(event),1,p1)!=0) fwrite(&event,sizeof(event),1,p2);
@@ -224,7 +228,8 @@ void show_by_type()
        Kazachenko_UVP3->sgFindResult->Cells[3][i] = event.date_rozd;     //"Тип мероприятия";
        Kazachenko_UVP3->sgFindResult->Cells[4][i] = event.pol;     //"Дата мероприятия"
        Kazachenko_UVP3->sgFindResult->Cells[5][i] = event.rodoslovn;   //Количество человек принявших участие в мероприятии"
-       Kazachenko_UVP3->sgFindResult->Cells[6][i] = event.fio_owner;   //"Фамилии отличившихся студентов"
+       Kazachenko_UVP3->sgFindResult->Cells[6][i] = event.fio_owner;   //"Фамилии отличившихся студентов"      
+       Kazachenko_UVP3->sgFindResult->Cells[7][i] = event.cost;
        Kazachenko_UVP3->sgFindResult->RowCount    = i+1;
     }
   }
@@ -335,9 +340,10 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editName->Visible = true;
       edtNumRec->Visible = false;
       editRodosl->Visible = true;
-      edtFioHeroes->Visible = true;
+      editOwner->Visible = true;
       editPol->Visible = true;
       editDate_rozd->Visible = true;
+      editCost->Visible = true;
       break;
     case 2:
       Kazachenko_UVP3_edit->Caption = "Добавление записи в конец файла";
@@ -345,9 +351,10 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editName->Visible = true;
       edtNumRec->Visible = false;
       editRodosl->Visible = true;
-      edtFioHeroes->Visible = true;
+      editOwner->Visible = true;
       editPol->Visible = true;
-      editDate_rozd->Visible = true;
+      editDate_rozd->Visible = true;   
+      editCost->Visible = true;
       break;
     case 3:
       Kazachenko_UVP3_edit->Caption = "Добавление записи по номеру";
@@ -355,9 +362,10 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editName->Visible = true;
       edtNumRec->Visible = true;
       editRodosl->Visible = true;
-      edtFioHeroes->Visible = true;
+      editOwner->Visible = true;
       editPol->Visible = true;
-      editDate_rozd->Visible = true;
+      editDate_rozd->Visible = true;   
+      editCost->Visible = true;
       break;
     case 4:
       Kazachenko_UVP3_edit->Caption = "Удаление записи в конец файла";
@@ -365,9 +373,10 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editName->Visible = false;
       edtNumRec->Visible = true;
       editRodosl->Visible = false;
-      edtFioHeroes->Visible = false;
+      editOwner->Visible = false;
       editPol->Visible = false;
-      editDate_rozd->Visible = false;
+      editDate_rozd->Visible = false;    
+      editCost->Visible = false;
       break;
     case 5:
       Kazachenko_UVP3_edit->Caption = "Показать записи по типу";
@@ -375,9 +384,10 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editName->Visible = false;
       edtNumRec->Visible = false;
       editRodosl->Visible = false;
-      edtFioHeroes->Visible = false;
+      editOwner->Visible = false;
       editPol->Visible = true;
       editDate_rozd->Visible = false;
+      editCost->Visible = false;
       break;
     case 9:
       Kazachenko_UVP3_edit->Caption = "Удалить записи по заданному имени";
@@ -385,9 +395,10 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editName->Visible = true;
       edtNumRec->Visible = false;
       editRodosl->Visible = false;
-      edtFioHeroes->Visible = false;
+      editOwner->Visible = false;
       editPol->Visible = false;
       editDate_rozd->Visible = false;
+      editCost->Visible = false;
       break;
     case 10:
       Kazachenko_UVP3_edit->Caption = "Изменить количество для записей с заданным именем";
@@ -395,9 +406,10 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editName->Visible = true;
       edtNumRec->Visible = false;
       editRodosl->Visible = true;
-      edtFioHeroes->Visible = false;
+      editOwner->Visible = false;
       editPol->Visible = false;
       editDate_rozd->Visible = false;
+      editCost->Visible = false;
       break;
   }
 }

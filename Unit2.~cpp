@@ -80,7 +80,7 @@ void create_file(){
   strcpy(event.name,Kazachenko_UVP3_edit->editName->Text.c_str());
   strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
   strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
-  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
   strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
   fwrite(&event,sizeof(event),1,p);
   fclose(p);
@@ -97,7 +97,7 @@ void insert_to_end(){
     strcpy(event.name,Kazachenko_UVP3_edit->editName->Text.c_str());
     strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
     strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
-    strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+    strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
     strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
     fwrite(&event,sizeof(event),1,p);
     fclose(p);
@@ -156,7 +156,7 @@ void insert_by_number()
   strcpy(event.name,Kazachenko_UVP3_edit->editName->Text.c_str());
   strcpy(event.date_rozd,Kazachenko_UVP3_edit->editDate_rozd->Date.DateString().c_str());
   strcpy(event.pol,Kazachenko_UVP3_edit->editPol->Text.c_str());
-  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str());
+  strcpy(event.rodoslovn,Kazachenko_UVP3_edit->editRodosl->Text.c_str());
   strcpy(event.fio_owner,Kazachenko_UVP3_edit->edtFioHeroes->Text.c_str());
   fwrite(&event,sizeof(event),1,p2);
 
@@ -302,7 +302,7 @@ void change_count(){
     int lv_kol = 0;
 
     strcpy(lv_name, Kazachenko_UVP3_edit->editName->Text.c_str() );
-    strcpy(lv_people_cnt, Kazachenko_UVP3_edit->edtPeopleCnt->Text.c_str() );
+    strcpy(lv_people_cnt, Kazachenko_UVP3_edit->editRodosl->Text.c_str() );
     if ( ( p1 = fopen( Kazachenko_UVP3->_fileName, "rb" ) ) == NULL ){
       MessageDlg("Ошибка чтения исходного файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
       return;
@@ -334,7 +334,7 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editPoroda->Visible = true;
       editName->Visible = true;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = true;
+      editRodosl->Visible = true;
       edtFioHeroes->Visible = true;
       editPol->Visible = true;
       editDate_rozd->Visible = true;
@@ -344,7 +344,7 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editPoroda->Visible = true;
       editName->Visible = true;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = true;
+      editRodosl->Visible = true;
       edtFioHeroes->Visible = true;
       editPol->Visible = true;
       editDate_rozd->Visible = true;
@@ -354,7 +354,7 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editPoroda->Visible = true;
       editName->Visible = true;
       edtNumRec->Visible = true;
-      edtPeopleCnt->Visible = true;
+      editRodosl->Visible = true;
       edtFioHeroes->Visible = true;
       editPol->Visible = true;
       editDate_rozd->Visible = true;
@@ -364,7 +364,7 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editPoroda->Visible = false;
       editName->Visible = false;
       edtNumRec->Visible = true;
-      edtPeopleCnt->Visible = false;
+      editRodosl->Visible = false;
       edtFioHeroes->Visible = false;
       editPol->Visible = false;
       editDate_rozd->Visible = false;
@@ -374,7 +374,7 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editPoroda->Visible = false;
       editName->Visible = false;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = false;
+      editRodosl->Visible = false;
       edtFioHeroes->Visible = false;
       editPol->Visible = true;
       editDate_rozd->Visible = false;
@@ -384,7 +384,7 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editPoroda->Visible = false;
       editName->Visible = true;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = false;
+      editRodosl->Visible = false;
       edtFioHeroes->Visible = false;
       editPol->Visible = false;
       editDate_rozd->Visible = false;
@@ -394,7 +394,7 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editPoroda->Visible = false;
       editName->Visible = true;
       edtNumRec->Visible = false;
-      edtPeopleCnt->Visible = true;
+      editRodosl->Visible = true;
       edtFioHeroes->Visible = false;
       editPol->Visible = false;
       editDate_rozd->Visible = false;

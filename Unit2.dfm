@@ -1,8 +1,8 @@
 object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   Left = 488
   Top = 178
-  Width = 642
-  Height = 303
+  Width = 630
+  Height = 297
   Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1079#1072#1087#1080#1089#1077#1081
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -63,9 +63,16 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     Height = 13
     Caption = #1053#1086#1084#1077#1088' '#1079#1072#1087#1080#1089#1080
   end
+  object Label1: TLabel
+    Left = 8
+    Top = 160
+    Width = 55
+    Height = 13
+    Caption = #1057#1090#1086#1080#1084#1086#1089#1090#1100
+  end
   object btOk: TButton
-    Left = 392
-    Top = 216
+    Left = 360
+    Top = 200
     Width = 75
     Height = 25
     Caption = 'OK'
@@ -73,8 +80,8 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     OnClick = btOkClick
   end
   object btCancel: TButton
-    Left = 472
-    Top = 216
+    Left = 480
+    Top = 200
     Width = 75
     Height = 25
     Caption = 'Cancel'
@@ -101,8 +108,9 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     Width = 145
     Height = 21
     ItemHeight = 13
+    ItemIndex = 0
     TabOrder = 4
-    Text = #1059#1095#1077#1073#1085#1086#1077
+    Text = #1052#1072#1083#1100#1095#1080#1082
     Items.Strings = (
       #1052#1072#1083#1100#1095#1080#1082
       #1044#1077#1074#1086#1095#1082#1072)
@@ -121,7 +129,7 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     ParseInput = False
     TabOrder = 5
   end
-  object edtFioHeroes: TEdit
+  object editOwner: TEdit
     Left = 160
     Top = 128
     Width = 401
@@ -141,10 +149,18 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     Width = 145
     Height = 21
     ItemHeight = 13
+    ItemIndex = 0
     TabOrder = 8
-    Text = #1059#1095#1077#1073#1085#1086#1077
+    Text = #1044#1072
     Items.Strings = (
       #1044#1072
       #1053#1077#1090)
+  end
+  object editCost: TEdit
+    Left = 160
+    Top = 160
+    Width = 401
+    Height = 21
+    TabOrder = 9
   end
 end

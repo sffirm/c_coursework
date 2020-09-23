@@ -101,13 +101,11 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     Width = 145
     Height = 21
     ItemHeight = 13
-    ItemIndex = 1
     TabOrder = 4
     Text = #1059#1095#1077#1073#1085#1086#1077
     Items.Strings = (
-      'C'#1087#1086#1088#1090#1080#1074#1085#1086#1077
-      #1059#1095#1077#1073#1085#1086#1077
-      #1042#1086#1089#1087#1080#1090#1072#1090#1077#1083#1100#1085#1086#1077)
+      #1052#1072#1083#1100#1095#1080#1082
+      #1044#1077#1074#1086#1095#1082#1072)
   end
   object editDate_rozd: TDateTimePicker
     Left = 160
@@ -123,25 +121,30 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     ParseInput = False
     TabOrder = 5
   end
-  object edtPeopleCnt: TEdit
-    Left = 160
-    Top = 104
-    Width = 105
-    Height = 21
-    TabOrder = 6
-  end
   object edtFioHeroes: TEdit
     Left = 160
     Top = 128
     Width = 401
     Height = 21
-    TabOrder = 7
+    TabOrder = 6
   end
   object edtNumRec: TEdit
     Left = 464
     Top = 8
     Width = 121
     Height = 21
+    TabOrder = 7
+  end
+  object editRodosl: TComboBox
+    Left = 160
+    Top = 104
+    Width = 145
+    Height = 21
+    ItemHeight = 13
     TabOrder = 8
+    Text = #1059#1095#1077#1073#1085#1086#1077
+    Items.Strings = (
+      #1044#1072
+      #1053#1077#1090)
   end
 end

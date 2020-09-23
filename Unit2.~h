@@ -22,12 +22,12 @@ __published:	// IDE-managed Components
         TComboBox *editPol;
         TLabel *lblDateEvt;
         TDateTimePicker *editDate_rozd;
-        TEdit *edtPeopleCnt;
         TLabel *lblPeopleCnt;
         TLabel *lblFioHeroes;
         TEdit *edtFioHeroes;
         TEdit *edtNumRec;
         TLabel *lblNumRec;
+        TComboBox *editRodosl;
         void __fastcall btOkClick(TObject *Sender);
         void __fastcall FormShow(TObject *Sender);
         void __fastcall btCancelClick(TObject *Sender);
