@@ -31,7 +31,7 @@ void insert_by_number();
 void delete_by_number();
 void show_dogs();
 void delete_by_name();
-void change_count();
+void change_cost();
 
 //---------------------------------------------------------------------------
 __fastcall TKazachenko_UVP3_edit::TKazachenko_UVP3_edit(TComponent* Owner)
@@ -65,7 +65,7 @@ void __fastcall TKazachenko_UVP3_edit::btOkClick(TObject *Sender)
       delete_by_name();
       break;
     case 10:
-      change_count();
+      change_cost();
       break;
   }
 }
@@ -304,13 +304,13 @@ void delete_by_name(){
     Kazachenko_UVP3_edit->Close();
 }
 
-void change_count(){
+void change_cost(){
     FILE *p1,*p2;
-    char lv_name[50], lv_people_cnt[8];
-    int lv_kol = 0;
+    char dog_name[50], dog_cost[50];
+    int count = 0;
 
-    strcpy(lv_name, Kazachenko_UVP3_edit->editName->Text.c_str() );
-    strcpy(lv_people_cnt, Kazachenko_UVP3_edit->editRodosl->Text.c_str() );
+    strcpy(dog_name, Kazachenko_UVP3_edit->editName->Text.c_str() );
+    strcpy(dog_cost, Kazachenko_UVP3_edit->editCost->Text.c_str() );
     if ( ( p1 = fopen( Kazachenko_UVP3->_fileName, "rb" ) ) == NULL ){
       MessageDlg("Ошибка чтения исходного файла",mtWarning,TMsgDlgButtons()<<mbOK,0);
       return;
@@ -321,19 +321,20 @@ void change_count(){
     };
     while( fread(&event,sizeof(event),1,p1) != 0 )
     {
-      if ( strcmp(lv_name, event.name ) == 0 ){
-        strcpy(event.rodoslovn, lv_people_cnt);
-        lv_kol++;
+      if ( strcmp(dog_name, event.name ) == 0 ){
+        strcpy(event.cost, dog_cost);
+        count++;
       }
       fwrite(&event,sizeof(event),1,p2);
     }
     fcloseall();
     unlink(Kazachenko_UVP3->_fileName);
     rename(Kazachenko_UVP3->_fileTmp,Kazachenko_UVP3->_fileName);
-    MessageDlg( "Количество измененных строк: " + AnsiString(lv_kol),mtWarning,TMsgDlgButtons()<<mbOK,0);
+    MessageDlg( "Количество измененных строк: " + AnsiString(count),mtWarning,TMsgDlgButtons()<<mbOK,0);
     Kazachenko_UVP3->Show();
     Kazachenko_UVP3_edit->Close();
 }
+
 void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
 {
     switch (type_operation) {
@@ -386,7 +387,7 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editYear->Visible = false;
       break;
     case 5:
-      Kazachenko_UVP3_edit->Caption = "Показать записи по типу";
+      Kazachenko_UVP3_edit->Caption = "Показать собачек мальчиков по году рождения";
       editPoroda->Visible = false;
       editName->Visible = false;
       edtNumRec->Visible = false;
@@ -410,15 +411,15 @@ void __fastcall TKazachenko_UVP3_edit::FormShow(TObject *Sender)
       editYear->Visible = false;
       break;
     case 10:
-      Kazachenko_UVP3_edit->Caption = "Изменить количество для записей с заданным именем";
+      Kazachenko_UVP3_edit->Caption = "Изменить стоимость для заданной собаки";
       editPoroda->Visible = false;
       editName->Visible = true;
       edtNumRec->Visible = false;
-      editRodosl->Visible = true;
+      editRodosl->Visible = false;
       editOwner->Visible = false;
       editPol->Visible = false;
       editDate_rozd->Visible = false;
-      editCost->Visible = false;       
+      editCost->Visible = true;
       editYear->Visible = false;
       break;
   }

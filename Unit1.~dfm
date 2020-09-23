@@ -1,6 +1,6 @@
 object Kazachenko_UVP3: TKazachenko_UVP3
-  Left = 552
-  Top = 310
+  Left = 499
+  Top = 183
   Width = 965
   Height = 552
   Caption = #1050#1083#1091#1073' '#1089#1086#1073#1072#1082#1086#1074#1086#1076#1089#1090#1074#1072
