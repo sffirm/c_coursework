@@ -1,9 +1,9 @@
 object Kazachenko_UVP3: TKazachenko_UVP3
-  Left = 403
-  Top = 144
-  Width = 960
+  Left = 499
+  Top = 183
+  Width = 965
   Height = 552
-  Caption = #1059#1063#1045#1058' '#1052#1045#1056#1054#1055#1056#1048#1071#1058#1048#1049', '#1055#1056#1054#1042#1045#1044#1045#1053#1053#1067#1061' '#1042' '#1059#1053#1048#1042#1045#1056#1057#1048#1058#1045#1058#1045
+  Caption = #1050#1083#1091#1073' '#1089#1086#1073#1072#1082#1086#1074#1086#1076#1089#1090#1074#1072
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Kazachenko_UVP3: TKazachenko_UVP3
   object sgFindResult: TStringGrid
     Left = 0
     Top = 0
-    Width = 944
+    Width = 949
     Height = 493
     Align = alClient
     ColCount = 8
@@ -29,13 +29,13 @@ object Kazachenko_UVP3: TKazachenko_UVP3
     OnDrawCell = sgFindResultDrawCell
     ColWidths = (
       10
-      70
+      148
       137
       111
-      82
+      115
       135
       139
-      107)
+      139)
     RowHeights = (
       50
       24
@@ -69,7 +69,7 @@ object Kazachenko_UVP3: TKazachenko_UVP3
         OnClick = Delete_by_numberClick
       end
       object Show_by_type: TMenuItem
-        Caption = #1042#1099#1074#1077#1089#1090#1080' '#1074#1089#1077' '#1089#1074#1077#1076#1077#1085#1080#1103' '#1086' '#1084#1077#1088#1086#1087#1088#1080#1103#1090#1080#1103#1093' '#1079#1072#1076#1072#1085#1085#1086#1075#1086' '#1090#1080#1087#1072
+        Caption = #1042#1099#1074#1077#1089#1090#1080' '#1089#1087#1080#1089#1086#1082' '#1089#1086#1073#1072#1082'-'#1084#1072#1083#1100#1095#1080#1082#1086#1074',  '#1082#1086#1090#1086#1088#1099#1077' '#1088#1086#1076#1080#1083#1080#1089#1100' '#1074' '#1079#1072#1076#1072#1085#1085#1099#1081' '#1075#1086#1076
         OnClick = Show_by_typeClick
       end
       object Delete_file: TMenuItem

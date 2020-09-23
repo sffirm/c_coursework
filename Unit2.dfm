@@ -1,8 +1,8 @@
 object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
-  Left = 488
-  Top = 178
-  Width = 630
-  Height = 297
+  Left = 1131
+  Top = 116
+  Width = 411
+  Height = 364
   Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1079#1072#1087#1080#1089#1077#1081
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,7 +14,7 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object lblUDK: TLabel
+  object lblPoroda: TLabel
     Left = 8
     Top = 16
     Width = 77
@@ -28,51 +28,58 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     Height = 13
     Caption = #1050#1083#1080#1095#1082#1072
   end
-  object lblTyptEvt: TLabel
+  object lblDate: TLabel
     Left = 8
     Top = 64
     Width = 79
     Height = 13
     Caption = #1044#1072#1090#1072' '#1088#1086#1078#1076#1077#1085#1080#1103
   end
-  object lblDateEvt: TLabel
+  object lblPol: TLabel
     Left = 8
     Top = 88
     Width = 20
     Height = 13
     Caption = #1055#1086#1083
   end
-  object lblPeopleCnt: TLabel
+  object lblRodosl: TLabel
     Left = 8
     Top = 112
     Width = 112
     Height = 13
     Caption = #1053#1072#1083#1080#1095#1080#1077' '#1088#1086#1076#1086#1089#1083#1086#1074#1085#1086#1081
   end
-  object lblFioHeroes: TLabel
+  object lblFio: TLabel
     Left = 8
     Top = 136
     Width = 84
     Height = 13
     Caption = #1060#1048#1054' '#1074#1083#1072#1076#1077#1083#1100#1094#1072
   end
-  object lblNumRec: TLabel
-    Left = 360
-    Top = 8
+  object lblNumb: TLabel
+    Left = 8
+    Top = 184
     Width = 73
     Height = 13
     Caption = #1053#1086#1084#1077#1088' '#1079#1072#1087#1080#1089#1080
   end
-  object Label1: TLabel
+  object lblCost: TLabel
     Left = 8
     Top = 160
     Width = 55
     Height = 13
     Caption = #1057#1090#1086#1080#1084#1086#1089#1090#1100
   end
+  object lblYear: TLabel
+    Left = 8
+    Top = 208
+    Width = 18
+    Height = 13
+    Caption = #1043#1086#1076
+  end
   object btOk: TButton
-    Left = 360
-    Top = 200
+    Left = 72
+    Top = 256
     Width = 75
     Height = 25
     Caption = 'OK'
@@ -80,8 +87,8 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
     OnClick = btOkClick
   end
   object btCancel: TButton
-    Left = 480
-    Top = 200
+    Left = 224
+    Top = 256
     Width = 75
     Height = 25
     Caption = 'Cancel'
@@ -91,21 +98,21 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   object editPoroda: TEdit
     Left = 160
     Top = 8
-    Width = 97
+    Width = 209
     Height = 21
     TabOrder = 2
   end
   object editName: TEdit
     Left = 160
     Top = 32
-    Width = 201
+    Width = 209
     Height = 21
     TabOrder = 3
   end
   object editPol: TComboBox
     Left = 160
     Top = 80
-    Width = 145
+    Width = 209
     Height = 21
     ItemHeight = 13
     ItemIndex = 0
@@ -118,7 +125,7 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   object editDate_rozd: TDateTimePicker
     Left = 160
     Top = 56
-    Width = 105
+    Width = 209
     Height = 21
     CalAlignment = dtaLeft
     Date = 43919.9509517014
@@ -132,21 +139,21 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   object editOwner: TEdit
     Left = 160
     Top = 128
-    Width = 401
+    Width = 209
     Height = 21
     TabOrder = 6
   end
   object edtNumRec: TEdit
-    Left = 464
-    Top = 8
-    Width = 121
+    Left = 160
+    Top = 176
+    Width = 209
     Height = 21
     TabOrder = 7
   end
   object editRodosl: TComboBox
     Left = 160
     Top = 104
-    Width = 145
+    Width = 209
     Height = 21
     ItemHeight = 13
     ItemIndex = 0
@@ -158,9 +165,16 @@ object Kazachenko_UVP3_edit: TKazachenko_UVP3_edit
   end
   object editCost: TEdit
     Left = 160
-    Top = 160
-    Width = 401
+    Top = 152
+    Width = 209
     Height = 21
     TabOrder = 9
+  end
+  object editYear: TEdit
+    Left = 160
+    Top = 200
+    Width = 209
+    Height = 21
+    TabOrder = 10
   end
 end
